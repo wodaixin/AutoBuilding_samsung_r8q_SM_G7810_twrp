@@ -21,7 +21,6 @@ jobs:
 
     - name: Syncing Preparation
       run: |
-        mkdir twrp && mkdir images
         git config --global user.name "wodaixin"
         git config --global user.email "6753344+wodaixin@users.noreply.github.com"
 
@@ -29,8 +28,8 @@ jobs:
       uses: actions/checkout@master
 
     - name: Start Syncing minimal-manifest-twrp Source
-      working-directory: twrp
       run: |
+        mkdir twrp && cd twrp && mkdir images 
         repo init --depth=1 -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-12.1
         repo sync
 
