@@ -29,7 +29,7 @@ jobs:
 
     - name: Start Syncing minimal-manifest-twrp Source
       run: |
-        mkdir twrp && cd twrp && mkdir images 
+        mkdir twrp && mkdir images && cd twrp 
         repo init --depth=1 -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-12.1
         repo sync
 
